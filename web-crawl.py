@@ -80,8 +80,6 @@ def crawl(url, depth, visited=None):
 
 # Build and visualize graph
 def matwork(murl, dicto):
-    print("building graph...")
-    time.sleep(2)
     G = nx.DiGraph()
     root = lsr(murl)
     G.add_node(root)
@@ -99,6 +97,7 @@ def matwork(murl, dicto):
     nx.draw(G, pos, with_labels=True, node_size=1100, font_size=6, arrows=True)
     plt.title("Recursive Site Connectivity Map")
     plt.show()
+
 # Main function
 def main():
     try:
@@ -106,11 +105,8 @@ def main():
         if not url.startswith("http"):
             url = "https://" + url
         site_map = crawl(url, depth=0)
-        mod(site_map)
-        #matwork(url, site_map)
+        matwork(url, site_map)
     finally:
         driver.quit()
 
 main()
-
-
