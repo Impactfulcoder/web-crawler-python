@@ -99,23 +99,6 @@ def matwork(murl, dicto):
     nx.draw(G, pos, with_labels=True, node_size=1100, font_size=6, arrows=True)
     plt.title("Recursive Site Connectivity Map")
     plt.show()
-#############################################modification########
-def mod(dic1):
-    k=list(dic1.keys())
-    lst=dic1[k[0]]
-    chil=2
-    for i in range(chil):
-        mo(lst[i])
-        time.sleep(2)
-
-def mo(url):
-    url = url.strip()
-    if not url.startswith("http"):
-        url = "https://" + url
-    site_map = crawl(url, depth=0)
-    matwork(url, site_map)
-            
-###################################################################
 # Main function
 def main():
     try:
@@ -129,3 +112,4 @@ def main():
         driver.quit()
 
 main()
+
