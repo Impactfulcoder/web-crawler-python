@@ -38,6 +38,7 @@ def get_domain(url):
 # Get links from a page
 def get_link(url, limit):
     lst = []
+    #  lst = []
     if url.endswith('/'):
         url = url[:-1]
     print(f"visiting {url} ....")
